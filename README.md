@@ -25,7 +25,7 @@ The system communicates movement data via the MQTT protocol to control external 
 
 The real-time status and movement logs can be monitored via the live dashboard:
 
-*   **Dashboard URL**: [INSERT_DASHBOARD_URL_HERE]
+*   **Dashboard URL**: http://157.173.101.159:8399/
 
 ---
 
