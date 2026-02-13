@@ -18,8 +18,10 @@ The system communicates movement data via the MQTT protocol to control external 
 
 *   **Broker IP**: `157.173.101.159`
 *   **Port**: `1883`
-*   **Client ID**: `python_face_tracker`
-*   **Topic**: `vision/banki_Senbonzakura_Kageyoshi/movement`
+*   **Client ID**: `python_face_tracker_user398`
+*   **Topic**: `vision/user398/movement`
+*   **Username (VPS)**: `user398`
+*   **Password (VPS)**: `5!mQ3@zT`
 
 ## Live Dashboard
 

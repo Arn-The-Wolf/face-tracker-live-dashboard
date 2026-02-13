@@ -28,8 +28,8 @@ LOCK_SMILE_MOUTH_RATIO = 1.15
 # MQTT settings - match your ESP8266
 MQTT_BROKER   = "157.173.101.159"
 MQTT_PORT     = 1883
-MQTT_TOPIC    = "vision/banki_Senbonzakura_Kageyoshi/movement"
-MQTT_CLIENT_ID = "python_face_tracker"
+MQTT_TOPIC    = "vision/user398/movement"
+MQTT_CLIENT_ID = "python_face_tracker_user398"
 
 # Angle publishing
 MIN_ANGLE = 0

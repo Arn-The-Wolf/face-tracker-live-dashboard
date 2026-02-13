@@ -23,10 +23,7 @@ from . import config   # assuming this is your config module
 # ────────────────────────────────────────────────
 # MQTT Configuration
 # ────────────────────────────────────────────────
-MQTT_BROKER   = "157.173.101.159"
-MQTT_PORT     = 1883
-MQTT_TOPIC    = "vision/banki_Senbonzakura_Kageyoshi/movement"
-MQTT_CLIENT_ID = f"python_face_tracker_{int(time.time())}"
+# MQTT settings are now imported from config.py
 
 MIN_ANGLE       = 0
 MAX_ANGLE       = 180
@@ -328,14 +325,14 @@ def main():
     # ── MQTT ──
     mqtt_client = mqtt_client_module.Client(
         mqtt_client_module.CallbackAPIVersion.VERSION1,
-        client_id=MQTT_CLIENT_ID,
+        client_id=config.MQTT_CLIENT_ID,
         clean_session=True
     )
 
     try:
-        mqtt_client.connect(MQTT_BROKER, MQTT_PORT, keepalive=60)
+        mqtt_client.connect(config.MQTT_BROKER, config.MQTT_PORT, keepalive=60)
         mqtt_client.loop_start()
-        print(f"MQTT connected → {MQTT_BROKER}:{MQTT_PORT}  topic: {MQTT_TOPIC}")
+        print(f"MQTT connected → {config.MQTT_BROKER}:{config.MQTT_PORT}  topic: {config.MQTT_TOPIC}")
     except Exception as e:
         print(f"MQTT connection failed: {e}")
         return
@@ -433,7 +430,7 @@ def main():
             # angle = MAX_ANGLE - angle
 
             if abs(angle - last_published_angle) >= ANGLE_HYSTERESIS:
-                mqtt_client.publish(MQTT_TOPIC, str(angle))
+                mqtt_client.publish(config.MQTT_TOPIC, str(angle))
                 print(f"→ Servo angle: {angle:3d}°   (cx={cx:5.1f}/{frame_w})")
                 last_published_angle = angle
 
